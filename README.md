@@ -9,6 +9,7 @@ This project is a **REST API** built with **Node.js** and **Fastify**, using **P
 - [Node.js](https://nodejs.org/) - JavaScript runtime for backend execution
 - [Fastify](https://www.fastify.io/) - High-performance web framework
 - [PostgreSQL](https://www.postgresql.org/) - Relational database
+- [Drizzle ORM](https://orm.drizzle.team/) - Minimalist ORM focused on TypeScript and SQL databases
 - [Redis](https://redis.io/) - Caching system for optimization
 - [Zod](https://zod.dev/) - Data validation
 - [Swagger](https://swagger.io/) - API documentation
@@ -20,7 +21,7 @@ This project is a **REST API** built with **Node.js** and **Fastify**, using **P
 ### 📦 **Prerequisites**
 
 Ensure you have installed:
-- [Node.js](https://nodejs.org/) (Recommended version 18+)
+- [Node.js](https://nodejs.org/) (Recommended version 20+)
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/)
 
@@ -46,7 +47,7 @@ Ensure you have installed:
 If using **Docker**, simply run:
 
 ```sh
-docker-compose up -d
+docker compose up -d
 ```
 
 This will start **PostgreSQL** and **Redis** containers.
