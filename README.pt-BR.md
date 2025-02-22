@@ -14,13 +14,14 @@ Este projeto é uma **API REST** construída com **Node.js** e **Fastify**, util
 - [Swagger](https://swagger.io/) - Documentação da API
 - [Docker](https://www.docker.com/) - Containerização de serviços
 - [Biome](https://biomejs.dev/) - Formatação e linting do código
+- [Drizzle ORM](https://orm.drizzle.team/) - ORM minimalista e focado em TypeScript para bancos SQL
 
 ## 🚀 Como Rodar o Projeto
 
 ### 📦 **Pré-requisitos**
 
 Certifique-se de ter instalado:
-- [Node.js](https://nodejs.org/) (Versão recomendada 18+)
+- [Node.js](https://nodejs.org/) (Versão recomendada 20+)
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/)
 
@@ -46,7 +47,7 @@ Certifique-se de ter instalado:
 Se estiver usando **Docker**, basta executar:
 
 ```sh
-docker-compose up -d
+docker compose up -d
 ```
 
 Isso iniciará os containers do **PostgreSQL** e **Redis**.
