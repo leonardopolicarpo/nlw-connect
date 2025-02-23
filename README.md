@@ -1,4 +1,4 @@
-# 🚀 Referral System API - NLW Rocketseat
+# 🚀 Referral System API
 
 This project is a **REST API** built with **Node.js** and **Fastify**, using **PostgreSQL** and **Redis** to store and manage data. The API allows users to register for events, invite new participants, and generate a ranking based on referrals.
 
@@ -14,7 +14,7 @@ This project is a **REST API** built with **Node.js** and **Fastify**, using **P
 - [Zod](https://zod.dev/) - Data validation
 - [Swagger](https://swagger.io/) - API documentation
 - [Docker](https://www.docker.com/) - Containerization of services
-- [Biome](https://biomejs.dev/) - Code formatting and linting
+- [Biome](https://biomejs.dev/) - Code formatting and linting (alternative to ESLint and Prettier)
 
 ## 🚀 How to Run the Project
 
@@ -22,15 +22,15 @@ This project is a **REST API** built with **Node.js** and **Fastify**, using **P
 
 Ensure you have installed:
 - [Node.js](https://nodejs.org/) (Recommended version 20+)
-- [Docker](https://www.docker.com/get-started)
-- [Docker Compose](https://docs.docker.com/compose/)
+- [Docker](https://www.docker.com/get-started) (optional)
+- [Docker Compose](https://docs.docker.com/compose/) (optional)
 
 ### 🛠️ **Environment Configuration**
 
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/your-username/nlw-connect.git
+   git clone https://github.com/leonardopolicarpo/nlw-connect.git
    cd nlw-connect
    ```
 
@@ -74,6 +74,14 @@ This will start **PostgreSQL** and **Redis** containers.
 
 The API will be running at **http://localhost:3333** 🚀
 
+### 🚀 **Running Without Docker**
+
+If you prefer to run the databases manually:
+
+1. Install PostgreSQL and Redis on your machine
+2. Configure the .env file with your local database credentials
+3. Start PostgreSQL and Redis manually before running the API
+
 ### 📖 **Accessing API Documentation**
 
 After starting the server, access the documentation via **Swagger**:
@@ -82,11 +90,14 @@ After starting the server, access the documentation via **Swagger**:
 
 ## 📜 **Main Endpoints**
 
-| Method | Route          | Description |
-|--------|--------------|-------------|
-| `POST` | `/subscriptions` | Registers a new participant |
-| `POST` | `/invite`     | Invites a new participant |
-| `GET`  | `/ranking`    | Retrieves the referral ranking |
+| Method | Route                                        | Description                                              |
+|--------|----------------------------------------------|----------------------------------------------------------|
+| `POST` | `/subscriptions`                             | Subscribes someone to the event                          |
+| `GET`  | `/invites/:subscriberId`                     | Redirects user to the invite link                        |
+| `GET`  | `/subscriber/:subscriberId/ranking/position` | Retrieves the subscriber's ranking position              |
+| `GET`  | `/subscribers/:subscriberId/ranking/clicks`  | Gets the number of clicks on the subscriber's invite link|
+| `GET`  | `/subscribers/:subscriberId/ranking/count`   | Gets the number of invites sent by the subscriber        |
+| `GET`  | `/ranking`                                   | Retrieves the overall ranking                            |
 
 ## 🤝 **Contributing**
 

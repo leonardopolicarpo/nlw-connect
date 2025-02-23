@@ -1,4 +1,4 @@
-# 🚀 API de Indicações - NLW Rocketseat
+# 🚀 API de Indicações
 
 Este projeto é uma **API REST** construída com **Node.js** e **Fastify**, utilizando **PostgreSQL** e **Redis** para armazenar e gerenciar dados. A API permite que os usuários se cadastrem em eventos, convidem novos participantes e gerem um ranking com base nas indicações.
 
@@ -13,7 +13,7 @@ Este projeto é uma **API REST** construída com **Node.js** e **Fastify**, util
 - [Zod](https://zod.dev/) - Validação de dados
 - [Swagger](https://swagger.io/) - Documentação da API
 - [Docker](https://www.docker.com/) - Containerização de serviços
-- [Biome](https://biomejs.dev/) - Formatação e linting do código
+- [Biome](https://biomejs.dev/) - Formatação e linting do código (alternativa para ESLint e Prettier)
 - [Drizzle ORM](https://orm.drizzle.team/) - ORM minimalista e focado em TypeScript para bancos SQL
 
 ## 🚀 Como Rodar o Projeto
@@ -22,15 +22,15 @@ Este projeto é uma **API REST** construída com **Node.js** e **Fastify**, util
 
 Certifique-se de ter instalado:
 - [Node.js](https://nodejs.org/) (Versão recomendada 20+)
-- [Docker](https://www.docker.com/get-started)
-- [Docker Compose](https://docs.docker.com/compose/)
+- [Docker](https://www.docker.com/get-started) (optional)
+- [Docker Compose](https://docs.docker.com/compose/) (optional)
 
 ### 🛠️ **Configuração do Ambiente**
 
 1. Clone o repositório:
 
    ```sh
-   git clone https://github.com/seu-usuario/nlw-connect.git
+   git clone https://github.com/leonardopolicarpo/nlw-connect.git
    cd nlw-connect
    ```
 
@@ -74,6 +74,14 @@ Isso iniciará os containers do **PostgreSQL** e **Redis**.
 
 A API estará rodando em **http://localhost:3333** 🚀
 
+### 🚀 **Running Without Docker**
+
+Se preferir rodar os bancos de dados manualmente:
+
+1. Instale o PostgreSQL e o Redis na sua máquina
+2. Configure o arquivo .env com as credenciais do banco de dados local
+3. Inicie o PostgreSQL e o Redis manualmente antes de rodar a API
+
 ### 📖 **Acessando a Documentação da API**
 
 Após iniciar o servidor, acesse a documentação via **Swagger**:
@@ -82,11 +90,14 @@ Após iniciar o servidor, acesse a documentação via **Swagger**:
 
 ## 📜 **Principais Endpoints**
 
-| Método | Rota         | Descrição |
-|--------|-------------|-----------|
-| `POST` | `/subscriptions` | Registra um novo participante |
-| `POST` | `/invite`   | Convida um novo participante |
-| `GET`  | `/ranking`  | Obtém o ranking de indicações |
+| Método | Rota                                         | Descrição                                                   |
+|--------|----------------------------------------------|-------------------------------------------------------------|
+| `POST` | `/subscriptions`                             | Inscreve um participante no evento                          |
+| `GET`  | `/invites/:subscriberId`                     | Redireciona o usuário para o link de convite                |
+| `GET`  | `/subscriber/:subscriberId/ranking/position` | Obtém a posição do participante no ranking                  |
+| `GET`  | `/subscribers/:subscriberId/ranking/clicks`  | Obtém o número de cliques no link de convite do participante|
+| `GET`  | `/subscribers/:subscriberId/ranking/count`   | Obtém o número de convites enviados pelo participante       |
+| `GET`  | `/ranking`                                   | Obtém o ranking geral                                       |
 
 ## 🤝 **Contribuindo**
 
