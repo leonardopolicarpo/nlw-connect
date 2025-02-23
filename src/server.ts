@@ -10,6 +10,7 @@ import {
 } from 'fastify-type-provider-zod';
 import { env } from './env';
 import { accessInviteLinkRoute } from './routes/access-invite-link-route';
+import { getRankingRoute } from './routes/get-ranking-route';
 import { getSubscriberInviteClicksRoute } from './routes/get-subscriber-invite-click-route';
 import { getSusbriberInvitesCountRoute } from './routes/get-subscriber-invites-count-route';
 import { getSubscriberRankingPositionRoute } from './routes/get-subscriber-ranking-position-route';
@@ -43,6 +44,7 @@ app.register(accessInviteLinkRoute);
 app.register(getSubscriberInviteClicksRoute);
 app.register(getSusbriberInvitesCountRoute);
 app.register(getSubscriberRankingPositionRoute);
+app.register(getRankingRoute);
 
 app.listen({ port: env.PORT }).then(() => {
   console.log(`HTTP server running on port ${env.PORT}`);
