@@ -26,3 +26,8 @@ GET http://localhost:3333/subscribers/b8b9f1a1-a062-4a48-a25a-116b92c00990/ranki
 ###
 
 GET http://localhost:3333/subscribers/b8b9f1a1-a062-4a48-a25a-116b92c00990/ranking/count
+
+
+###
+
+GET http://localhost:3333/subscriber/b8b9f1a1-a062-4a48-a25a-116b92c00990/ranking/position
